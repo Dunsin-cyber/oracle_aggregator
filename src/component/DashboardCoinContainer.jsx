@@ -1,5 +1,8 @@
 import { useState } from "react";
-import {useGetChainLinkPrice} from "../hooks/index"
+import {
+  useGetChainLinkBTCPrice,
+  useGetLatestChainlinkETHPrice,
+} from "../hooks/index";
 
 export default function DashboardCoinContainer() {
   return (
@@ -90,45 +93,12 @@ function LeftDashboardCoinContainer() {
     setMenuIcon5(false);
   }
 
-  const {data, error} = useGetChainLinkPrice()
+  const { data: btc } = useGetChainLinkBTCPrice();
+  const { data: eth } = useGetLatestChainlinkETHPrice();
 
-console.log(data, error)
+  console.log(Number(eth) / 10 ** 18, Number(btc) / 10 ** 18);
   return (
     <div id="left-dashboard-coin-container">
-      <div className="coin-details">
-        <div className="coin-logo">
-          <img alt="" src="./assets/Ellipse 12.svg" />
-          <div className="coin-logo-text">
-            <p>BNB</p>
-            <div className="coin-logo-inner-text" id="uniqueColor">
-              <p>$132.02</p>
-              <div className="unique-color">
-                <p>+2.17%</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="coin-detail-price">
-          <p className="token-amount">300.00</p>
-          <p className="coin-price">$200.00</p>
-        </div>
-
-        <p className="crypto">Crypto</p>
-
-        <button>Borrow</button>
-
-        <div id="menuPopupContainer">
-          <img
-            alt=""
-            className="menu-icon"
-            src="./assets/menu.svg"
-            onClick={showMenuIcon}
-          />
-          {menuIcon && <MenuIconInner />}
-        </div>
-      </div>
-
       {/* 2 */}
 
       <div className="coin-details">
@@ -137,7 +107,7 @@ console.log(data, error)
           <div className="coin-logo-text">
             <p>Bitcoin</p>
             <div className="coin-logo-inner-text" id="uniqueColor">
-              <p>$132.02</p>
+              <p>${(Number(btc) / 10 ** 18).toLocaleString()}</p>
               <div className="unique-color">
                 <p>+2.17%</p>
               </div>
@@ -147,7 +117,9 @@ console.log(data, error)
 
         <div className="coin-detail-price">
           <p className="token-amount">300.00</p>
-          <p className="coin-price">$200.00</p>
+          <p className="coin-price">
+            ${(Number(btc) / 10 ** 18).toLocaleString()}
+          </p>
         </div>
 
         <p className="crypto">Crypto</p>
@@ -172,7 +144,7 @@ console.log(data, error)
           <div className="coin-logo-text">
             <p>Eth</p>
             <div className="coin-logo-inner-text" id="uniqueColor">
-              <p>$132.02</p>
+              <p> ${(Number(eth) / 10 ** 18).toLocaleString()}</p>
               <div className="unique-color">
                 <p>+2.17%</p>
               </div>
@@ -182,7 +154,9 @@ console.log(data, error)
 
         <div className="coin-detail-price">
           <p className="token-amount">300.00</p>
-          <p className="coin-price">$200.00</p>
+          <p className="coin-price">
+            ${(Number(eth) / 10 ** 18).toLocaleString()}
+          </p>
         </div>
 
         <p className="crypto">Crypto</p>

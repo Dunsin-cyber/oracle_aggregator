@@ -9,12 +9,72 @@ type ReturnType = {
   error: any;
 };
 
-export const useGetChainLinkPrice = (id: number): ReturnType => {
+export const useGetChainLinkBTCPrice = (): ReturnType => {
   const { data, error } = useReadContract({
     abi: contractAbi,
     address: contractAddress,
-    functionName: "getLatestChainlinkPrice",
+    functionName: "getLatestChainlinkBTCPrice",
     // args: [id],
+  });
+
+  return {
+    isLoading: !data && !error,
+    data,
+    error,
+  };
+};
+
+export const useGetLatestChainlinkETHPrice = (): ReturnType => {
+  const { data, error } = useReadContract({
+    abi: contractAbi,
+    address: contractAddress,
+    functionName: "getLatestChainlinkETHPrice",
+    // args: [id],
+  });
+
+  return {
+    isLoading: !data && !error,
+    data,
+    error,
+  };
+};
+
+export const useGetLatestBTCPrice = (updateData: any): ReturnType => {
+  const { data, error } = useReadContract({
+    abi: contractAbi,
+    address: contractAddress,
+    functionName: "getLatestBTCPrice",
+    args: [updateData],
+  });
+
+  return {
+    isLoading: !data && !error,
+    data,
+    error,
+  };
+};
+
+export const useGLatestETHPrice = (updateData: any): ReturnType => {
+  const { data, error } = useReadContract({
+    abi: contractAbi,
+    address: contractAddress,
+    functionName: "getLatestETHPrice",
+    args: [updateData],
+  });
+
+  return {
+    isLoading: !data && !error,
+    data,
+    error,
+  };
+};
+
+export const useGetLatestBNBPrice = (updateData: any): ReturnType => {
+  const { data, error } = useReadContract({
+    abi: contractAbi,
+    address: contractAddress,
+    functionName: "getLatestBNBPrice",
+    args: [updateData],
   });
 
   return {
