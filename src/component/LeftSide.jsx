@@ -3,7 +3,7 @@ export default function LeftSide() {
     <div className="leftSide">
       <a href="home" className="margin-set-logo">
         <img src="./assets/apple.svg" alt="polfund logo" />
-        Polfund
+        Oracle Aggregator
       </a>
 
       <div className="user-profile">
