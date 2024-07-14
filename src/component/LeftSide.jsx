@@ -11,6 +11,7 @@ export default function LeftSide() {
           <img src="./assets/Group 10.svg" className="user-image" alt="" />
         </div>
         <p>NFT lord crypto844.sol</p>
+        <w3m-button balance="hide" />
         <img src="./assets/down arrow.svg" id="downArrow" alt="" />
       </div>
 

@@ -6,7 +6,8 @@ export default function MobileNavBar() {
         <img alt="" src="./assets/Users/users.svg" />
       </div>
 
-      <img alt="" className="navbar-user" src="./assets/Ellipse 35.svg" />
+      <w3m-button balance="hide" />
+      {/* <img alt="" className="navbar-user" src="./assets/Ellipse 35.svg" /> */}
 
       <div className="mobile-navbar-icon2">
         <img alt="" src="./assets/User Interface/Internet.svg" />

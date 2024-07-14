@@ -1,7 +1,7 @@
 import { useAccount, useReadContract } from "wagmi";
 import contractAbi from "../pyth/ABI/abi.json";
 
-const contractAddress = "0x3D6F5af4D54b058e8cf51b43F340f879EaABb6b4";
+const contractAddress = "0x9EFb119c507CEa769b4277D6eC42274096579ce9";
 
 type ReturnType = {
   isLoading: boolean;
