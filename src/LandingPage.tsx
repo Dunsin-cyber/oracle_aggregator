@@ -27,6 +27,7 @@ function RightSide() {
   function deletePopup() {
     setPopUp(false);
   }
+
   return (
     <div id="rightSide">
       <TopRightSide onhandleShowPopup={handleShowPopup} />

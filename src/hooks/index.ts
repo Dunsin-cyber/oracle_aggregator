@@ -1,7 +1,7 @@
 import { useAccount, useReadContract } from "wagmi";
-// import contractAbi from "../contract/CrowdFunding-abi.json";
+import contractAbi from "../pyth/ABI/abi.json";
 
-const contractAddress = "0x835F1F5a5578E49b5D163954cCdA60333c3ffC89";
+const contractAddress = "0x3D6F5af4D54b058e8cf51b43F340f879EaABb6b4";
 
 type ReturnType = {
   isLoading: boolean;
@@ -9,12 +9,12 @@ type ReturnType = {
   error: any;
 };
 
-export const useGetACampaign = (id: number): ReturnType => {
+export const useGetChainLinkPrice = (id: number): ReturnType => {
   const { data, error } = useReadContract({
-    abi: contractAbi.abi,
+    abi: contractAbi,
     address: contractAddress,
-    functionName: "campaigns",
-    args: [id],
+    functionName: "getLatestChainlinkPrice",
+    // args: [id],
   });
 
   return {

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {useGetChainLinkPrice} from "../hooks/index"
 
 export default function DashboardCoinContainer() {
   return (
@@ -89,6 +90,9 @@ function LeftDashboardCoinContainer() {
     setMenuIcon5(false);
   }
 
+  const {data, error} = useGetChainLinkPrice()
+
+console.log(data, error)
   return (
     <div id="left-dashboard-coin-container">
       <div className="coin-details">
